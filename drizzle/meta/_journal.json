@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1750284205266,
+      "tag": "0000_exotic_black_knight",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1750360431073,
+      "tag": "0001_useful_vanisher",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1750361793232,
+      "tag": "0002_gray_piledriver",
+      "breakpoints": true
+    }
+  ]
+}
