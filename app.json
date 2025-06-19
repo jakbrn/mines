@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "mines",
+    "name": "Kopalnie",
     "slug": "mines",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,17 +13,17 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "package": "com.jakbrn.mines"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.jakbrn.mines"
     },
     "web": {
       "bundler": "metro",
@@ -32,7 +32,19 @@
     },
     "plugins": [
       "expo-router",
-      "expo-sqlite"
+      "expo-sqlite",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#232323",
+          "image": "./assets/images/splash.png",
+          "dark": {
+            "image": "./assets/images/splash.png",
+            "backgroundColor": "#000000"
+          },
+          "imageWidth": 200
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
