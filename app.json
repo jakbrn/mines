@@ -13,10 +13,13 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
-      "package": "com.jakbrn.mines"
+      "package": "com.jakbrn.mines",
+      "bundleIdentifier": "com.jakbrn.mines"
     },
     "android": {
       "adaptiveIcon": {
