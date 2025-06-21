@@ -1,16 +1,22 @@
-# Starter base
+# Scout "Mines" Game Manager
 
-A starting point to help you set up your project quickly and use the common components provided by `react-native-reusables`. The idea is to make it easier for you to get started.
+A mobile app writen with React Native for managing scout game **"Mines"** (known as "Kopalnie" in Polish). This app simplifies the gameplay by **automatically tracking which team controls which mine**, how many resources they earn, and at what intervals.
 
 ## Features
 
-- NativeWind v4
-- Dark and light mode
-  - Android Navigation Bar matches mode
-  - Persistent mode
-- Common components
-  - ThemeToggle, Avatar, Button, Card, Progress, Text, Tooltip
+- Create and manage **teams**
+- Define different **resource types** (e.g. gold, coal, crystals)
+- Create **mines**, assign ownership, and set:
+  - Resource type
+  - Yield amount
+  - Collection interval
+- Automatically calculate and update team resource totals over time
+- View current standings and total resources per team
 
-<img src="https://github.com/mrzachnugent/react-native-reusables/assets/63797719/42c94108-38a7-498b-9c70-18640420f1bc"
-     alt="starter-base-template"
-     style="width:270px;" />
+## Tech Stack
+
+- Expo
+- React Native
+- Tailwind CSS
+- Shadcn
+- Drizzle
