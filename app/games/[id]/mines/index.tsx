@@ -2,16 +2,9 @@ import { eq } from "drizzle-orm";
 import { useLiveQuery } from "drizzle-orm/expo-sqlite";
 import { Link, router, Stack, useLocalSearchParams } from "expo-router";
 import { ChevronLeftIcon, PlusIcon } from "lucide-nativewind";
-import { Ellipsis, Pen, Trash } from "lucide-react-native";
 import * as React from "react";
 import { SafeAreaView, View } from "react-native";
 import { Button } from "~/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
 import { Text } from "~/components/ui/text";
 import { mines } from "~/db/schema";
 import { useDrizzle } from "~/hooks/drizzle";

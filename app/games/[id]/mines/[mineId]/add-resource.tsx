@@ -14,7 +14,7 @@ import {
   SelectValue,
 } from "~/components/ui/select";
 import { Text } from "~/components/ui/text";
-import { games, mines, minesResources, resources, teams } from "~/db/schema";
+import { minesResources } from "~/db/schema";
 import { useDrizzle } from "~/hooks/drizzle";
 import { useGameResources, useMineResources } from "~/hooks/resources";
 

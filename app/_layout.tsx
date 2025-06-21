@@ -1,17 +1,17 @@
 import "~/global.css";
 
 import { DarkTheme, DefaultTheme, Theme, ThemeProvider } from "@react-navigation/native";
+import { PortalHost } from "@rn-primitives/portal";
+import { drizzle } from "drizzle-orm/expo-sqlite/driver";
+import { useMigrations } from "drizzle-orm/expo-sqlite/migrator";
 import { Stack } from "expo-router";
+import { openDatabaseSync, SQLiteProvider } from "expo-sqlite";
 import { StatusBar } from "expo-status-bar";
 import * as React from "react";
 import { ActivityIndicator, Appearance, Platform } from "react-native";
+import { setAndroidNavigationBar } from "~/lib/android-navigation-bar";
 import { NAV_THEME } from "~/lib/constants";
 import { useColorScheme } from "~/lib/useColorScheme";
-import { PortalHost } from "@rn-primitives/portal";
-import { setAndroidNavigationBar } from "~/lib/android-navigation-bar";
-import { openDatabaseSync, SQLiteProvider } from "expo-sqlite";
-import { drizzle } from "drizzle-orm/expo-sqlite/driver";
-import { useMigrations } from "drizzle-orm/expo-sqlite/migrator";
 import migrations from "../drizzle/migrations";
 
 const LIGHT_THEME: Theme = {
@@ -37,7 +37,7 @@ const usePlatformSpecificSetup = Platform.select({
 export default function RootLayout() {
   usePlatformSpecificSetup();
   const { isDarkColorScheme } = useColorScheme();
-  const expoDb = openDatabaseSync("mines.db");
+  const expoDb = openDatabaseSync("mines.db", { enableChangeListener: true });
   const db = drizzle(expoDb);
   useMigrations(db, migrations);
 

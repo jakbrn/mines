@@ -5,7 +5,7 @@ import { SafeAreaView, View } from "react-native";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Text } from "~/components/ui/text";
-import { games, resources, teams } from "~/db/schema";
+import { resources } from "~/db/schema";
 import { useDrizzle } from "~/hooks/drizzle";
 
 export default function CreateResourceScreen() {

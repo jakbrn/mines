@@ -1,12 +1,12 @@
+import { useLiveQuery } from "drizzle-orm/expo-sqlite";
 import { Link, router, Stack } from "expo-router";
 import { PickaxeIcon, PlusIcon } from "lucide-nativewind";
 import * as React from "react";
 import { SafeAreaView, View } from "react-native";
 import { Button } from "~/components/ui/button";
 import { Text } from "~/components/ui/text";
-import { useLiveQuery } from "drizzle-orm/expo-sqlite";
-import { useDrizzle } from "~/hooks/drizzle";
 import { games } from "~/db/schema";
+import { useDrizzle } from "~/hooks/drizzle";
 
 export default function GamesScreen() {
   const db = useDrizzle();

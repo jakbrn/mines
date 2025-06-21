@@ -1,8 +1,7 @@
 import { eq } from "drizzle-orm";
 import { useLiveQuery } from "drizzle-orm/expo-sqlite";
-import { Link, router, Stack, useLocalSearchParams } from "expo-router";
-import { ChevronLeftIcon, ChevronRightIcon, PenIcon } from "lucide-nativewind";
-import { Cuboid, Pickaxe, Users } from "lucide-react-native";
+import { router, Stack, useLocalSearchParams } from "expo-router";
+import { ChevronLeftIcon, PenIcon } from "lucide-nativewind";
 import * as React from "react";
 import { SafeAreaView, View } from "react-native";
 import { Button } from "~/components/ui/button";
@@ -18,11 +17,11 @@ import {
 } from "~/components/ui/dialog";
 import { Input } from "~/components/ui/input";
 import { Text } from "~/components/ui/text";
-import { games, resources, teams } from "~/db/schema";
+import { resources, teams } from "~/db/schema";
 import { useDrizzle } from "~/hooks/drizzle";
 
 export default function GameResourceScreen() {
-  const { id, resourceId } = useLocalSearchParams<{
+  const { resourceId } = useLocalSearchParams<{
     id: string;
     resourceId: string;
   }>();

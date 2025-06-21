@@ -12,17 +12,14 @@ export default function CreateGameScreen() {
   const db = useDrizzle();
   const [name, setName] = useState("");
 
-  const createGame = () => {
+  const createGame = async () => {
     if (!name.trim()) {
       return;
     }
-    db.insert(games)
-      .values({
-        name: name.trim(),
-      })
-      .then(() => {
-        router.dismissTo("/");
-      });
+    await db.insert(games).values({
+      name: name.trim(),
+    });
+    router.dismissTo("/");
   };
 
   return (

@@ -5,23 +5,14 @@ import { useEffect, useState } from "react";
 import { SafeAreaView, View } from "react-native";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
-import {
-  Option,
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "~/components/ui/select";
 import { Text } from "~/components/ui/text";
-import { games, mines, minesResources, resources, teams } from "~/db/schema";
+import { minesResources } from "~/db/schema";
 import { useDrizzle } from "~/hooks/drizzle";
-import { useGameResources, useMineResource, useMineResources } from "~/hooks/resources";
+import { useMineResource } from "~/hooks/resources";
 
 export default function EditMineResourceScreen() {
   const db = useDrizzle();
-  const { id, mineId, resourceId } = useLocalSearchParams<{ id: string; mineId: string; resourceId: string }>();
+  const { resourceId } = useLocalSearchParams<{ id: string; mineId: string; resourceId: string }>();
   const [frequency, setFrequency] = useState("");
   const [amount, setAmount] = useState("");
   const { data } = useMineResource(Number(resourceId));

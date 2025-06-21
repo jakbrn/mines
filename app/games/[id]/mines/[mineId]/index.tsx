@@ -1,8 +1,6 @@
 import { eq } from "drizzle-orm";
-import { useLiveQuery } from "drizzle-orm/expo-sqlite";
 import { Link, router, Stack, useLocalSearchParams } from "expo-router";
-import { ChevronLeftIcon, ChevronRightIcon, ClockIcon, PenIcon, PlusIcon, CuboidIcon } from "lucide-nativewind";
-import { Pickaxe, Users } from "lucide-react-native";
+import { ChevronLeftIcon, ClockIcon, CuboidIcon, PenIcon, PlusIcon } from "lucide-nativewind";
 import * as React from "react";
 import { SafeAreaView, View } from "react-native";
 import { Button } from "~/components/ui/button";
@@ -17,12 +15,11 @@ import {
   DialogTrigger,
 } from "~/components/ui/dialog";
 import { Input } from "~/components/ui/input";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
 import { Text } from "~/components/ui/text";
-import { games, mines, resources, teams } from "~/db/schema";
+import { mines } from "~/db/schema";
 import { useDrizzle } from "~/hooks/drizzle";
 import { useMine } from "~/hooks/mines";
-import { useGameResources, useMineResources } from "~/hooks/resources";
+import { useMineResources } from "~/hooks/resources";
 
 export default function GameMineScreen() {
   const { id, mineId } = useLocalSearchParams<{
@@ -31,7 +28,6 @@ export default function GameMineScreen() {
   }>();
   const db = useDrizzle();
   const { data } = useMine(Number(mineId));
-  const { data: resources } = useGameResources(Number(id));
   const { data: mineResources } = useMineResources(Number(mineId));
   const [name, setName] = React.useState("");
   const [editDialogVisible, setEditDialogVisible] = React.useState(false);

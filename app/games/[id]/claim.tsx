@@ -3,7 +3,6 @@ import { ChevronLeftIcon } from "lucide-nativewind";
 import { useState } from "react";
 import { SafeAreaView, View } from "react-native";
 import { Button } from "~/components/ui/button";
-import { Input } from "~/components/ui/input";
 import {
   Option,
   Select,
@@ -14,7 +13,7 @@ import {
   SelectValue,
 } from "~/components/ui/select";
 import { Text } from "~/components/ui/text";
-import { games, teams, teamsMines } from "~/db/schema";
+import { teamsMines } from "~/db/schema";
 import { useDrizzle } from "~/hooks/drizzle";
 import { useMines } from "~/hooks/mines";
 import { useTeams } from "~/hooks/teams";
